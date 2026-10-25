@@ -136,12 +136,14 @@ def kmeans(X, k, iters=50, seed=0):
 def spatial_clusters(objs, k):
     ds = np.array([o["d"] for o in objs])
     th = np.array([o["theta"] for o in objs])
+    gaps = np.array([o["d"] - o["depth"] / 2 for o in objs])   # empty space behind the object (valid when theta ~ 0)
     X = np.c_[ds, np.cos(np.radians(th)), np.sin(np.radians(th))]   # angle on a circle
     lab = kmeans(X, k) if k > 1 and len(X) > 1 else np.zeros(len(X), int)
     out = []
     for j in sorted(set(lab)):
         m = lab == j
         out.append({"d_mean": round(float(ds[m].mean()), 4), "d_std": round(float(ds[m].std()), 4),
+                    "gap_mean": round(float(gaps[m].mean()), 4), "gap_std": round(float(gaps[m].std()), 4),
                     "theta_mean": round(circ_mean(th[m]), 2), "theta_std": round(circ_std(th[m]), 2),
                     "weight": round(float(m.mean()), 3), "count": int(m.sum()),
                     "reliable": bool(m.sum() >= 5 and circ_std(th[m]) < 30)})
@@ -278,7 +280,7 @@ def main():
         locs = np.array([s[3] for s in S])
         brabs = [abs(b) for b in br]                     # fold left/right so both sides agree
         dm = float(np.mean(d))
-        consistent = bool(len(S) >= 5 and np.std(d) < 0.25 * max(dm, 0.5) and np.std(brabs) < 30 and circ_std(ry) < 30)
+        consistent = bool(len(S) >= 5 and np.std(d) < 0.10 * max(dm, 0.5) and np.std(brabs) < 30 and circ_std(ry) < 30)
         res["pairwise"].append({
             "a": x, "b": y, "count": len(S), "consistent": consistent,
             "dist_mean": round(dm, 4), "dist_std": round(float(np.std(d)), 4),
@@ -292,7 +294,7 @@ def main():
             "note": "A's frame: ahead = along A's front, lateral = sideways. bearing_abs_* folds "
                     "left/right; side_left_fraction = share of B on A's left. Prefer bearing_abs_* "
                     "over bearing_mean (which cancels when B appears on both sides). "
-                    "consistent = at least 5 samples and low spread in distance, bearing and relative yaw."})
+                    "consistent = at least 5 samples, distance std < 10% of mean, and low spread in bearing and relative yaw."})
  
     # ---- generator's own symbolic labels (optional bonus)
     sym = Counter()

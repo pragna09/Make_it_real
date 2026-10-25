@@ -1,0 +1,321 @@
+{
+  "scene_id": "bedroom_0193",
+  "room_type": "bedroom",
+  "seed": 193,
+  "generation_attempts": 1,
+  "validated": true,
+  "units": "meters",
+  "coordinate_system": "+Z up; rotation_z in degrees CCW; position = center of object base; size = [x, y, z] before rotation; object front faces local +Y",
+  "room": {
+    "width": 4.49,
+    "depth": 5.24,
+    "height": 2.7,
+    "wall_thickness": 0.1
+  },
+  "shell": {
+    "doors": [
+      {
+        "wall": 1,
+        "offset": 4.24,
+        "width": 0.9,
+        "height": 2.05,
+        "position": [
+          4.49,
+          4.242,
+          0.0
+        ],
+        "rotation_z": 90
+      }
+    ],
+    "windows": [
+      {
+        "wall": 0,
+        "offset": 1.58,
+        "width": 1.2,
+        "height": 1.1,
+        "sill": 0.9,
+        "position": [
+          1.582,
+          0.0,
+          0.9
+        ],
+        "rotation_z": 0
+      }
+    ]
+  },
+  "stats": {
+    "floor_coverage": 0.2,
+    "num_objects": 9
+  },
+  "objects": [
+    {
+      "id": "bed_01",
+      "category": "bed",
+      "mesh": null,
+      "size": [
+        1.704,
+        1.848,
+        0.52
+      ],
+      "position": [
+        0.944,
+        1.161,
+        0.0
+      ],
+      "rotation_z": 270,
+      "parent": "room",
+      "movable": true,
+      "mass_kg": 55.78,
+      "color": [
+        0.6,
+        0.7,
+        0.9
+      ]
+    },
+    {
+      "id": "nightstand_01",
+      "category": "nightstand",
+      "mesh": null,
+      "size": [
+        0.467,
+        0.393,
+        0.507
+      ],
+      "position": [
+        0.216,
+        2.296,
+        0.0
+      ],
+      "rotation_z": 270,
+      "parent": "room",
+      "movable": true,
+      "mass_kg": 8.25,
+      "color": [
+        0.55,
+        0.4,
+        0.25
+      ]
+    },
+    {
+      "id": "picture_01",
+      "category": "picture",
+      "mesh": null,
+      "size": [
+        0.574,
+        0.029,
+        0.421
+      ],
+      "position": [
+        0.02,
+        1.161,
+        1.3
+      ],
+      "rotation_z": 270,
+      "parent": "room",
+      "movable": false,
+      "mass_kg": 0.87,
+      "color": [
+        0.85,
+        0.75,
+        0.4
+      ]
+    },
+    {
+      "id": "rug_01",
+      "category": "rug",
+      "mesh": null,
+      "size": [
+        2.304,
+        1.2,
+        0.02
+      ],
+      "position": [
+        1.968,
+        1.161,
+        0.0
+      ],
+      "rotation_z": 270,
+      "parent": "room",
+      "movable": true,
+      "mass_kg": 2.78,
+      "color": [
+        0.55,
+        0.38,
+        0.38
+      ]
+    },
+    {
+      "id": "wardrobe_01",
+      "category": "wardrobe",
+      "mesh": null,
+      "size": [
+        1.153,
+        0.635,
+        2.054
+      ],
+      "position": [
+        4.153,
+        0.677,
+        0.0
+      ],
+      "rotation_z": 90,
+      "parent": "room",
+      "movable": true,
+      "mass_kg": 73.13,
+      "color": [
+        0.5,
+        0.35,
+        0.22
+      ]
+    },
+    {
+      "id": "dresser_01",
+      "category": "dresser",
+      "mesh": null,
+      "size": [
+        1.021,
+        0.476,
+        0.86
+      ],
+      "position": [
+        2.311,
+        4.982,
+        0.0
+      ],
+      "rotation_z": 180,
+      "parent": "room",
+      "movable": true,
+      "mass_kg": 40.68,
+      "color": [
+        0.58,
+        0.42,
+        0.28
+      ]
+    },
+    {
+      "id": "plant_01",
+      "category": "plant",
+      "mesh": null,
+      "size": [
+        0.378,
+        0.39,
+        1.044
+      ],
+      "position": [
+        0.289,
+        5.025,
+        0.0
+      ],
+      "rotation_z": 180,
+      "parent": "room",
+      "movable": true,
+      "mass_kg": 4.82,
+      "color": [
+        0.2,
+        0.55,
+        0.25
+      ]
+    },
+    {
+      "id": "ceiling_light_01",
+      "category": "ceiling_light",
+      "mesh": null,
+      "size": [
+        0.537,
+        0.531,
+        0.049
+      ],
+      "position": [
+        2.245,
+        1.31,
+        2.651
+      ],
+      "rotation_z": 0,
+      "parent": "room",
+      "movable": false,
+      "mass_kg": 2.26,
+      "color": [
+        1.0,
+        1.0,
+        0.9
+      ]
+    },
+    {
+      "id": "ceiling_light_02",
+      "category": "ceiling_light",
+      "mesh": null,
+      "size": [
+        0.462,
+        0.471,
+        0.046
+      ],
+      "position": [
+        2.245,
+        3.93,
+        2.654
+      ],
+      "rotation_z": 0,
+      "parent": "room",
+      "movable": false,
+      "mass_kg": 1.61,
+      "color": [
+        1.0,
+        1.0,
+        0.9
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "subject": "bed_01",
+      "relation": "against_wall",
+      "object": "west"
+    },
+    {
+      "subject": "nightstand_01",
+      "relation": "left_of",
+      "object": "bed_01"
+    },
+    {
+      "subject": "picture_01",
+      "relation": "mounted_on_wall",
+      "object": "west"
+    },
+    {
+      "subject": "picture_01",
+      "relation": "above",
+      "object": "bed_01"
+    },
+    {
+      "subject": "rug_01",
+      "relation": "under",
+      "object": "bed_01"
+    },
+    {
+      "subject": "wardrobe_01",
+      "relation": "against_wall",
+      "object": "east"
+    },
+    {
+      "subject": "dresser_01",
+      "relation": "against_wall",
+      "object": "north"
+    },
+    {
+      "subject": "plant_01",
+      "relation": "against_wall",
+      "object": "north"
+    },
+    {
+      "subject": "ceiling_light_01",
+      "relation": "mounted_on_ceiling",
+      "object": "room"
+    },
+    {
+      "subject": "ceiling_light_02",
+      "relation": "mounted_on_ceiling",
+      "object": "room"
+    }
+  ],
+  "description": "A 4.5 m by 5.2 m bedroom with a bed, a nightstand, a wardrobe, a dresser and a plant. The door is on the east wall and the window is on the south wall. The bed is against the west wall. A picture hangs above the bed. The wardrobe is against the east wall."
+}
